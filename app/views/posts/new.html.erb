@@ -1,0 +1,6 @@
+<%= turbo_frame_tag "modal" do %>
+  <%= render TurboModalComponent.new(title: "New Post!") do %>
+    <%= render "form", post: @post %>
+  <% end %>
+<% end %>
+
