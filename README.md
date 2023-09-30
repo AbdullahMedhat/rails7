@@ -1,25 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Introuduction
 
-Things you may want to cover:
+This is basic posts app using rails 7, using Turbo streams, Turbo frames, Tailwind css, Stimulus controllers
 
-* Ruby version
+* Ruby version: 3.0.4
 
-* System dependencies
+* Rails version: 7.0.7
 
-* Configuration
+* Stimulus version: 1.2.2
 
-* Database creation
+* Tailwind CSS: 2.0.30
 
-* Database initialization
 
-* How to run the test suite
+## Installation and running the server
 
-* Services (job queues, cache servers, search engines, etc.)
+1. `bundle install` to install gems
+2. `./bin/dev` to start the server
 
-* Deployment instructions
-
-* ...
-# rails7
+> **_NOTE:_** starting the server `./bin/dev` will run all the process in the Procfile.dev
