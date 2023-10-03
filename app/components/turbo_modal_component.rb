@@ -6,5 +6,4 @@ class TurboModalComponent < ViewComponent::Base
   def initialize(title:)
     @title = title
   end
-
 end
