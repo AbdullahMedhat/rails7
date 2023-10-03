@@ -1,5 +1,4 @@
 env:
-  RUBY_VERSION: 3.0.4
   POSTGRES_USER: postgres
   POSTGRES_PASSWORD: ""
   POSTGRES_DB: postgres
@@ -15,10 +14,10 @@ jobs:
     name: Rubocop
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-ruby@v1
+      - uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: ${{ env.RUBY_VERSION }}
+          bundler-cache: true
       - name: Install Rubocop
         run: gem install rubocop
       - name: Check code
