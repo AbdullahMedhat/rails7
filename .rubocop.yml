@@ -2,6 +2,7 @@ AllCops:
   Exclude:
     - 'config/*'
     - 'bin/*'
+    - 'vendor/**/*'
 
 Style/Documentation:
   Enabled: false
