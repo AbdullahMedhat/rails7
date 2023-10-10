@@ -1,0 +1,15 @@
+AllCops:
+  Exclude:
+    - 'config/*'
+    - 'bin/*'
+
+Style/Documentation:
+  Enabled: false
+
+Lint/MissingSuper:
+  Exclude:
+    - 'app/components/**/*'
+
+Metrics/MethodLength:
+  Enabled: true
+  Max: 15
