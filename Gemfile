@@ -56,8 +56,8 @@ gem 'bootsnap', require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem 'faker'
   gem 'byebug'
+  gem 'faker'
 end
 
 group :development do
@@ -72,15 +72,15 @@ group :development do
 end
 
 group :test do
-  gem "capybara"
-  gem "database_cleaner-active_record"
-  gem "factory_bot_rails"
-  gem "fakeredis", require: "fakeredis/rspec"
-  gem "rspec-html-matchers"
-  gem "rspec-its"
-  gem "rspec-rails"
-  gem "rspec-sidekiq"
-  gem "selenium-webdriver"
-  gem "rails-controller-testing"
-  gem "shoulda-matchers", "~> 5.0"
+  gem 'capybara'
+  gem 'database_cleaner-active_record'
+  gem 'factory_bot_rails'
+  gem 'fakeredis', require: 'fakeredis/rspec'
+  gem 'rails-controller-testing'
+  gem 'rspec-html-matchers'
+  gem 'rspec-its'
+  gem 'rspec-rails'
+  gem 'rspec-sidekiq'
+  gem 'selenium-webdriver'
+  gem 'shoulda-matchers', '~> 5.0'
 end
