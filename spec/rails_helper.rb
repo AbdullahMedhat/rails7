@@ -20,6 +20,9 @@ require 'capybara/rspec'
 require 'rspec-sidekiq'
 require 'sidekiq/testing/inline'
 require 'rspec-html-matchers'
+require 'simplecov'
+SimpleCov.start
+
 Sidekiq::Testing.fake!
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }

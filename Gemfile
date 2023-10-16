@@ -57,6 +57,7 @@ gem 'bootsnap', require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'byebug'
+  gem 'dotenv-rails'
   gem 'faker'
 end
 
@@ -81,6 +82,9 @@ group :test do
   gem 'rspec-its'
   gem 'rspec-rails'
   gem 'rspec-sidekiq'
+  gem 'simplecov'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 5.0'
 end
+
+
