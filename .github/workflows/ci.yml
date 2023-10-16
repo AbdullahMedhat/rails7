@@ -3,7 +3,6 @@ name: CI
 # only run ci on pull request
 on:
   push:
-    ignore_branches: [main]
   pull_request:
 
 jobs:
