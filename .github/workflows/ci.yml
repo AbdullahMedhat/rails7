@@ -61,3 +61,7 @@ jobs:
       - name: Run tests
         run: bundle exec rspec --format progress
 
+      - uses: joshmfrankel/simplecov-check-action@main
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
