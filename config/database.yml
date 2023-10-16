@@ -61,7 +61,7 @@ test:
   database: rails7_test
   host: <%= ENV.fetch("DB_HOST") { "localhost" } %>
   port: <%= ENV.fetch("DB_PORT") { 4450 } %>
-  username: <%= ENV.fetch("DB_USERNAME") { postgres } %>
+  username: <%= ENV.fetch("DB_USERNAME") { "postgres" } %>
   password:
 
 # As with config/credentials.yml, you never want to store sensitive information,
