@@ -82,9 +82,7 @@ group :test do
   gem 'rspec-its'
   gem 'rspec-rails'
   gem 'rspec-sidekiq'
-  gem 'simplecov'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 5.0'
+  gem 'simplecov'
 end
-
-
