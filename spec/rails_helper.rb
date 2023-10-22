@@ -21,12 +21,11 @@ require 'rspec-sidekiq'
 require 'sidekiq/testing/inline'
 require 'rspec-html-matchers'
 require 'simplecov'
-require "simplecov"
-require "simplecov-json"
+require 'simplecov-json'
 SimpleCov.formatters = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::HTMLFormatter,
-  SimpleCov::Formatter::JSONFormatter
-])
+                                                                  SimpleCov::Formatter::HTMLFormatter,
+                                                                  SimpleCov::Formatter::JSONFormatter
+                                                                ])
 SimpleCov.start
 
 Sidekiq::Testing.fake!
