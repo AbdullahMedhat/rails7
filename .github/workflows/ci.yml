@@ -61,11 +61,8 @@ jobs:
       - name: Run tests
         run: bundle exec rspec --format progress
 
-      - name: Simplecov Reporter
-        uses: keithlayne/simplecov-reporter-action@v1.0.0
+      - name: Simplecov Report
+        uses: aki77/simplecov-report-action@v1
         with:
-          # Github token
-          github-token: ${{ github.token }}
-          baseline-resultset: coverage-baseline/.resultset.json
-          current-resultset: coverage/.resultset.json
+          token: ${{ secrets.GITHUB_TOKEN }}
 
