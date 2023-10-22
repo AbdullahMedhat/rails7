@@ -1,0 +1,73 @@
+name: CI
+
+# only run ci on pull request
+on:
+  push:
+  pull_request:
+
+jobs:
+  Rails:
+    name: Run specs
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    services:
+      postgresdb:
+        image: postgres:14.1
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_DB: marketplace_test
+          POSTGRES_USER: postgres
+          POSTGRES_HOST_AUTH_METHOD: trust
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
+    env:
+      RAILS_ENV: test
+      CI: true
+      DB_HOST: localhost
+      DB_PORT: 5432
+      POSTGRES_USER: postgres
+
+    steps:
+      # This is deliberately here to track context during automation.
+      - name: Debug Dump Github Context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+
+      - uses: actions/checkout@v3
+
+      - name: Install system dependencies (libvips)
+        run: |
+          mkdir -p ./tmp/cache
+          sudo apt update
+          sudo apt install libvips
+
+      # This will use the version from .ruby-version
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Create DB
+        run: bin/rails db:create
+
+      - name: Setup DB
+        run: bundle exec rails db:migrate db:seed db:test:prepare
+
+      - name: Precompile Assets
+        run: bundle exec rails assets:precompile
+
+      - name: Run tests
+        run: bundle exec rspec --format progress
+
+      - name: Simplecov Report
+        uses: aki77/simplecov-report-action@v1
+        with:
+          failedThreshold: 100
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Simplecov percentage
+        uses: joshmfrankel/simplecov-check-action@main
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}

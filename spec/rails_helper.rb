@@ -20,6 +20,14 @@ require 'capybara/rspec'
 require 'rspec-sidekiq'
 require 'sidekiq/testing/inline'
 require 'rspec-html-matchers'
+require 'simplecov'
+require 'simplecov-json'
+SimpleCov.formatters = SimpleCov::Formatter::MultiFormatter.new([
+                                                                  SimpleCov::Formatter::HTMLFormatter,
+                                                                  SimpleCov::Formatter::JSONFormatter
+                                                                ])
+SimpleCov.start
+
 Sidekiq::Testing.fake!
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }

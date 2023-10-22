@@ -91,6 +91,11 @@ GEM
     database_cleaner-core (2.0.1)
     date (3.3.3)
     diff-lcs (1.5.0)
+    docile (1.4.0)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     erubi (1.12.0)
     factory_bot (6.2.1)
       activesupport (>= 5.0.0)
@@ -111,6 +116,7 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    json (2.6.3)
     loofah (2.21.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -140,6 +146,8 @@ GEM
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     nokogiri (1.15.4-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
     pg (1.5.3)
     public_suffix (5.0.3)
@@ -231,6 +239,15 @@ GEM
       connection_pool (>= 2.3.0)
       rack (>= 2.2.4)
       redis-client (>= 0.14.0)
+    simplecov (0.22.0)
+      docile (~> 1.1)
+      simplecov-html (~> 0.11)
+      simplecov_json_formatter (~> 0.1)
+    simplecov-html (0.12.3)
+    simplecov-json (0.2.3)
+      json
+      simplecov
+    simplecov_json_formatter (0.1.4)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -243,6 +260,8 @@ GEM
     tailwindcss-rails (2.0.30)
       railties (>= 6.0.0)
     tailwindcss-rails (2.0.30-x86_64-darwin)
+      railties (>= 6.0.0)
+    tailwindcss-rails (2.0.30-x86_64-linux)
       railties (>= 6.0.0)
     thor (1.2.2)
     timeout (0.4.0)
@@ -272,12 +291,15 @@ GEM
 PLATFORMS
   ruby
   x86_64-darwin
+  x86_64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap
   byebug
   capybara
   database_cleaner-active_record
+  dotenv-rails
   factory_bot_rails
   faker
   fakeredis
@@ -294,6 +316,8 @@ DEPENDENCIES
   rspec-sidekiq
   selenium-webdriver
   shoulda-matchers (~> 5.0)
+  simplecov
+  simplecov-json
   sprockets-rails
   stimulus-rails
   tailwindcss-rails
