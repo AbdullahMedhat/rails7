@@ -67,3 +67,7 @@ jobs:
           failedThreshold: 100
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Simplecov percentage
+        uses: joshmfrankel/simplecov-check-action@main
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
